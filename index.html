@@ -45,16 +45,17 @@
     </div>
     <div class="editor">
       <div class="btn-container">
-        <button class="btn btn-reset">Reset</button>
-        <button class="btn btn-next btn-active">Next picture</button>
+        <button class="btn" id="btn-reset">Reset</button>
+        <button class="btn btn-active" id="btn-next">Next picture</button>
         <label class="btn btn-load" for="btnInput">
           Load picture
           <input class="btn-load--input" id="btnInput" name="upload" type="file" placeholder="Load picture" />
         </label>
-        <button class="btn btn-save">Save picture</button>
+        <button class="btn" id="btn-save">Save picture</button>
       </div>
       <div class="image-container">
-        <img src="assets/img/img.jpg" alt="image" />
+       <!-- <img src="assets/img/img.jpg" alt="image" /> -->
+        <canvas></canvas>
       </div>
     </div>
   </main>
