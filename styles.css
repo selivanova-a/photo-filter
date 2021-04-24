@@ -161,6 +161,7 @@ output {
   width: 100%;
   max-width: 60%;
 }
+/* Переменные CSS для JS ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 :root {
   --blur: 0px;
   --invert: 0%;
@@ -174,10 +175,14 @@ img {
   max-height: 520px;
   max-width: 830px;
   object-fit: contain;
-  filter: blur(var(--blur, 0px)) invert(var(--invert, 0%))
-    sepia(var(--sepia, 0%)) saturate(var(--saturate, 100%))
-    hue-rotate(var(--hue, 0deg));
+  filter: blur(var(--blur, 0px))
+          invert(var(--invert, 0%))
+          sepia(var(--sepia, 0%))
+          saturate(var(--saturate, 100%))
+          hue-rotate(var(--hue, 0deg));
 }
+
+/* Переменные CSS для JS ///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .fullscreen {
   position: fixed;
   top: 120px;
