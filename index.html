@@ -19,27 +19,27 @@
     <div class="filters">
       <label>
         Blur:
-        <input class="filter-input" name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
+        <input class="filter-input" id="blur" name="blur" data-sizing="px" type="range" min="0" max="10" value="0" />
         <output name="result">0</output>
       </label>
       <label>
         Invert:
-        <input class="filter-input" name="invert" data-sizing="%" type="range" min="0" max="100" value="0" />
+        <input class="filter-input" id="invert" name="invert" data-sizing="%" type="range" min="0" max="100" value="0" />
         <output name="result">0</output>
       </label>
       <label>
         Sepia:
-        <input class="filter-input" name="sepia" data-sizing="%" type="range" min="0" max="100" value="0" />
+        <input class="filter-input" id="sepia" name="sepia" data-sizing="%" type="range" min="0" max="100" value="0" />
         <output name="result">0</output>
       </label>
       <label>
         Saturate:
-        <input class="filter-input" name="saturate" data-sizing="%" type="range" min="0" max="200" value="100" />
+        <input class="filter-input" id="saturate" name="saturate" data-sizing="%" type="range" min="0" max="200" value="100" />
         <output name="result">100</output>
       </label>
       <label>
         Hue rotate:
-        <input class="filter-input" name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" />
+        <input class="filter-input" id="hue" name="hue" data-sizing="deg" type="range" min="0" max="360" value="0" />
         <output name="result">0</output>
       </label>
     </div>
@@ -54,7 +54,6 @@
         <button class="btn" id="btn-save">Save picture</button>
       </div>
       <div class="image-container">
-       <!-- <img src="assets/img/img.jpg" alt="image" /> -->
         <canvas></canvas>
       </div>
     </div>

@@ -1,10 +1,9 @@
 const inputs = document.querySelectorAll('input[type=range]');
 const outputs = document.querySelectorAll('.filters output');
-const imageContainer = document.querySelector('.image-container');
 
-const buttonReset = document.getElementById('btn-reset');
-const buttonSave = document.getElementById('btn-save');
-const buttonNext = document.getElementById('btn-next');
+const buttonReset = document.querySelector('#btn-reset');
+const buttonSave = document.querySelector('#btn-save');
+const buttonNext = document.querySelector('#btn-next');
 const buttonFullscreen = document.querySelector('.fullscreen');
 
 
@@ -21,6 +20,7 @@ function scrollNumberUpdate() {
 inputs.forEach(input => input.addEventListener('change', addFilters));
 inputs.forEach(input => input.addEventListener('mousemove', addFilters));
 inputs.forEach(input => input.addEventListener('input', scrollNumberUpdate));
+
 
 //RESET BUTTON DELETE FILTRES
 buttonReset.addEventListener('click', resetFiltres);
@@ -50,7 +50,7 @@ function toggleScreeen() {
 //LOAD IMAGE FROM COMPUTER
 const fileInput = document.querySelector('input[type="file"]');
 
-fileInput.addEventListener('change', function(e) {
+fileInput.addEventListener('change', (e) =>{
 	const file = fileInput.files[0];
 	const reader = new FileReader();
 	reader.onload = () => {
@@ -67,6 +67,7 @@ fileInput.addEventListener('change', function(e) {
 
 //Draw image canvas
 const canvas = document.querySelector('canvas');
+const imageContainer = document.querySelector('.image-container');
 
 function drawImage() {
 	const img = new Image();
@@ -82,7 +83,7 @@ function drawImage() {
 }
 drawImage();
 
-//Save image canvas (not work)/////////////////////////////////////////////////////////////////////////////////////
+//Save image canvas (not work)
 buttonSave.addEventListener('click', function(e) {
 	console.log(canvas.toDataURL());
 	let link = document.createElement('a');
@@ -90,35 +91,32 @@ buttonSave.addEventListener('click', function(e) {
 	link.href = canvas.toDataURL();
 	link.click();
 	link.delete;
+	img.onload = () => {
+		imageContainer.innerHTML = "";
+		imageContainer.append(img);
+	};
 });
-//Save with Filters (not work)///////////////////////////////////////////////////////////////////////////////////////
+
 
 //SLIDER IMAGE DAY or NIGHT
-let today = new Date(),
-	hour = today.getHours();
-
+let today = new Date();
+let	hour = today.getHours();
 let timeOfDay;
-let morning = 'morning';
-let day = 'day';
-let evening = 'evening';
-let night = 'night';
 
 if (hour >=6 && hour < 12) {
-	timeOfDay = morning;
+	timeOfDay = 'morning';
 } else if (hour >=12 && hour < 18) {
-	timeOfDay = day;
+	timeOfDay = 'day';
 } else if (hour >= 18 && hour < 24) {
-	timeOfDay = evening;
-}
-else {
-	timeOfDay = night;
+	timeOfDay = 'evening';
+} else {
+	timeOfDay = 'night';
 }
 
 
 const base = `https://raw.githubusercontent.com/rolling-scopes-school/stage1-tasks/assets/images/${timeOfDay}/`;
 const images = ['01.jpg', '02.jpg', '03.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'];
 let i = 0;
-
 
 
 function viewBgImage(src) {
